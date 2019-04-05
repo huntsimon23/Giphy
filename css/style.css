@@ -1,3 +1,21 @@
 .nfl {
     margin: 5px;
 }
+
+.giphyImage {
+    float: left;
+    margin: 5px;
+}
+
+#banner {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    background-image: url("../assets/images/gridiron.jpg");
+}
+
+.whitetext {
+    color: white;
+}
