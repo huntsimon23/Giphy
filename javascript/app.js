@@ -17,10 +17,12 @@ $("#teams").append(newButton);
 $(document).on("click", "#submit-button", function () {
     // stop page from refreshing
     event.preventDefault();
-    topics.push($("#input-text").val());
-    console.log(topics);
+    topics.push($("#input-text").val().trim());
+    var audio = new Audio("./assets/sounds/nflsoundeffect2.m4a");
+    audio.play();
     //     - empty #teams div
     $("#teams").empty();
+    $("#input-text").empty();
     //     - push #input-text string to 'topics' array
     //     - run 'addButtons' function to repopulate #teams div
     addButtons();
@@ -31,9 +33,11 @@ $(document).on("click", ".nfl", function() {
      // JQuery define var x as this.data-name
        x = $(this).attr("data-name");
     // Define var queryUrl with API formatted to recieve 'x' string value, return 10 .gif images
-    var queryUrl = "http://api.giphy.com/v1/gifs/search?api_key=xcXmdAKaKKLtv9PQ3bkHFpNK9KHa1rRa&limit=5&rating=g&q=football_players_" + x; 
+    var queryUrl = "http://api.giphy.com/v1/gifs/search?api_key=kkHL4hKurs2O3eFNvauukDeCT7e0oxv8&limit=5&rating=g&q=nfl_team_" + x; 
 //     - empty #gifs div
     $("#gifs").empty();
+    var audio = new Audio("./assets/sounds/nflsoundeffect.m4a");
+    audio.play();
 //     - define AJAX request with GET and queryURL
     $.ajax({
         url: queryUrl,
@@ -48,19 +52,22 @@ $(document).on("click", ".nfl", function() {
     for (i=0; i < newGifs.length; i++) {   
     // Define vars gifSouce, imageStill, and imageAnimated to represent image URLs that will toggle
     var imageAnimated = newGifs[i].images.fixed_height.url;
-    var imageStill = response.data[i].images.fixed_height_still.url;
+    var imageStill = newGifs[i].images.fixed_height_still.url;
     var gifSource = imageAnimated;
     //      generate and append the images to #gifs div, - add .giphyImages class!
-    $("#gifs").append("<img src='" + gifSource + "' data-still='" + imageStill + "' data-animate='" + imageAnimated + "' data-state='animate' class=giphyImage>");
-}
+    var gif = $("<img src='" + gifSource + "' data-still='" + imageStill + "' data-animate='" + imageAnimated + "' data-state='animate' class='giphyImage' id='g" + i + "'>");
+    $("#gifs").append(gif);
+    var rating = $("<span>").text("Rating: " + newGifs[i].rating).addClass("whitetext rating");
+    $("#gifs").append(rating);
+    }
     // - create if/esle statement, if .giphyImages with JQuery onclick to toggle URL still/animation 
     $(document).on("click", ".giphyImage", function() {
+        event.preventDefault();
         var state = $(this).attr("data-state");
         if (state === "animate") {
             $(this).attr("src", $(this).attr("data-still"));
-            $(this).attr("data-state", "still");}
-
-        if (state === "still") {
+            $(this).attr("data-state", "still");
+        } else {
             $(this).attr("src", $(this).attr("data-animate"));
             $(this).attr("data-state", "animate");
           }

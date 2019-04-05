@@ -1,9 +1,9 @@
 .nfl {
     margin: 5px;
+    float: left;
 }
 
 .giphyImage {
-    float: left;
     margin: 5px;
 }
 
@@ -18,4 +18,10 @@
 
 .whitetext {
     color: white;
+    text-shadow: 1px 1px 3px black; 
+}
+
+.rating {
+    float: left;
+    position: relative;
 }
