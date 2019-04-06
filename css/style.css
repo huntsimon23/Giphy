@@ -1,10 +1,11 @@
 .nfl {
     margin: 5px;
-    float: left;
 }
 
 .giphyImage {
     margin: 5px;
+    height: 200px;
+    width: 200px;
 }
 
 #banner {
@@ -18,10 +19,15 @@
 
 .whitetext {
     color: white;
-    text-shadow: 1px 1px 3px black; 
+    text-shadow: 2px 2px 4px black; 
 }
 
 .rating {
-    float: left;
     position: relative;
+    bottom: 10px;
+}
+
+#redtext {
+    color: red;
+    text-shadow: 3px 3px 5px black; 
 }
