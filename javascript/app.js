@@ -12,12 +12,17 @@ $("#teams").append(newButton);
 
 $(document).on("click", "#submit-button", function() {
     event.preventDefault();
+    if ($("#input-text").val() === "") {
+        return false;
+    }
+    else {
     topics.push($("#input-text").val().trim());
     var audio = new Audio("./assets/sounds/nflsoundeffect2.m4a");
     audio.play();
     $("#teams").empty();
     addButtons();
-});
+    $("#input-text").val("")
+}});
 
 $(document).on("click", ".nfl", function() {
     var x = $(this).attr("data-name");
