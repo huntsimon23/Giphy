@@ -60,21 +60,6 @@ $(document).on("click", ".nfl", function() {
         $(this).attr("src", $(this).attr("data-still"));
         $(this).attr("data-state", "still");
         }
-
-    // switch (state) {
-    //     case "still":
-    //     $(this).attr("src", $(this).attr("data-animate"));
-    //     $(this).attr("data-state", "animate");
-    //     console.log("This should say animate: " + state);
-    //       break;
-    //     case "animate":
-    //     $(this).attr("src", $(this).attr("data-still"));
-    //     $(this).attr("data-state", "still");
-    //     console.log("This should say still: " + state);
-    //       break;
-    //     default:
-    //       console.log("the switch statement isn't working");
-    // }
     });
 addButtons();
 });
