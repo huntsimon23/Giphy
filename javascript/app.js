@@ -21,7 +21,7 @@ $(document).on("click", "#submit-button", function() {
 
 $(document).on("click", ".nfl", function() {
     var x = $(this).attr("data-name");
-    var queryUrl = "http://api.giphy.com/v1/gifs/search?api_key=xcXmdAKaKKLtv9PQ3bkHFpNK9KHa1rRa&limit=10&rating=g&q=nfl_team_" + x; 
+    var queryUrl = "https://api.giphy.com/v1/gifs/search?api_key=xcXmdAKaKKLtv9PQ3bkHFpNK9KHa1rRa&limit=10&rating=g&q=nfl_team_" + x; 
 
     $("#gifs").empty();
 
