@@ -1,6 +1,7 @@
+# Giphy NFL
+A JavaScript app that demonstrates proficiency in JQuery and AJAX HTML methods.
 
-My initial Psueudocode:
-
+# My initial Psueudocode:
 Html...
 1. Create HTML with the following:
     - Creative Header with NFL Theme!
